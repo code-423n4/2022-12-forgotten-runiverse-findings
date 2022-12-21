@@ -1,0 +1,8 @@
+{
+  "contest": 198,
+  "handle": "Lambda",
+  "risk": "",
+  "title": "ownerMintUsingTokenId can brick the whole contract",
+  "issueId": 6,
+  "issueUrl": "https://github.com/code-423n4/2022-12-forgotten-runiverse-findings/issues/6"
+}
