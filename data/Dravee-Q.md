@@ -23,7 +23,7 @@ Non-Critical Risk | 8
   - [2.2. Duplicated code: Hardcoded strings having multiple occurrences should be declared as `constant`](#22-duplicated-code-hardcoded-strings-having-multiple-occurrences-should-be-declared-as-constant)
   - [2.3. Typos and syntax](#23-typos-and-syntax)
   - [2.4. Remove unused function](#24-remove-unused-function)
-  - [2.5. Upgrade to Solidity version `0.8.12`  and use `string.concat()` or `bytes.concat()`](#25-upgrade-to-solidity-version-0812--and-use-stringconcat-or-bytesconcat)
+  - [2.5. Upgrade to Solidity version `0.8.12`  and use `string.concat()`](#25-upgrade-to-solidity-version-0812--and-use-stringconcat)
   - [2.6. Use named returns where relevant](#26-use-named-returns-where-relevant)
   - [2.7. Magic numbers](#27-magic-numbers)
   - [2.8. Non-library/interface files should use fixed compiler versions, not floating ones](#28-non-libraryinterface-files-should-use-fixed-compiler-versions-not-floating-ones)
