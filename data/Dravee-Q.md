@@ -1,8 +1,8 @@
 **Overview**
 Risk Rating | Number of issues
 --- | ---
-Low Risk | 10
-Non-Critical Risk | 9
+Low Risk | 11
+Non-Critical Risk | 8
 
 **Table of Contents**
 
@@ -17,16 +17,16 @@ Non-Critical Risk | 9
   - [1.8. Events not indexed](#18-events-not-indexed)
   - [1.9. Use a 2-step ownership transfer pattern](#19-use-a-2-step-ownership-transfer-pattern)
   - [1.10. Mismatch between interface and implementation](#110-mismatch-between-interface-and-implementation)
+  - [1.11. Passing the leaf as an argument is redundant as it contains no additional information](#111-passing-the-leaf-as-an-argument-is-redundant-as-it-contains-no-additional-information)
 - [2. Non-Critical Issues](#2-non-critical-issues)
-  - [2.1. Passing the leaf as an argument is redundant as it contains no additional information](#21-passing-the-leaf-as-an-argument-is-redundant-as-it-contains-no-additional-information)
-  - [2.2. Non-traditional Use of ReentrancyGuard](#22-non-traditional-use-of-reentrancyguard)
-  - [2.3. Duplicated code: Hardcoded strings having multiple occurrences should be declared as `constant`](#23-duplicated-code-hardcoded-strings-having-multiple-occurrences-should-be-declared-as-constant)
-  - [2.4. Typos and syntax](#24-typos-and-syntax)
-  - [2.5. Remove unused function](#25-remove-unused-function)
-  - [2.6. Upgrade to Solidity version `0.8.12`  and use `string.concat()` or `bytes.concat()`](#26-upgrade-to-solidity-version-0812--and-use-stringconcat-or-bytesconcat)
-  - [2.7. Use named returns where relevant](#27-use-named-returns-where-relevant)
-  - [2.8. Magic numbers](#28-magic-numbers)
-  - [2.9. Non-library/interface files should use fixed compiler versions, not floating ones](#29-non-libraryinterface-files-should-use-fixed-compiler-versions-not-floating-ones)
+  - [2.1. Non-traditional Use of ReentrancyGuard](#21-non-traditional-use-of-reentrancyguard)
+  - [2.2. Duplicated code: Hardcoded strings having multiple occurrences should be declared as `constant`](#22-duplicated-code-hardcoded-strings-having-multiple-occurrences-should-be-declared-as-constant)
+  - [2.3. Typos and syntax](#23-typos-and-syntax)
+  - [2.4. Remove unused function](#24-remove-unused-function)
+  - [2.5. Upgrade to Solidity version `0.8.12`  and use `string.concat()` or `bytes.concat()`](#25-upgrade-to-solidity-version-0812--and-use-stringconcat-or-bytesconcat)
+  - [2.6. Use named returns where relevant](#26-use-named-returns-where-relevant)
+  - [2.7. Magic numbers](#27-magic-numbers)
+  - [2.8. Non-library/interface files should use fixed compiler versions, not floating ones](#28-non-libraryinterface-files-should-use-fixed-compiler-versions-not-floating-ones)
 
 # 1. Low Risk Issues
 
@@ -169,9 +169,7 @@ contracts/RuniverseLand.sol:
   92      ) public override nonReentrant { 
 ```
 
-# 2. Non-Critical Issues
-
-## 2.1. Passing the leaf as an argument is redundant as it contains no additional information
+## 1.11. Passing the leaf as an argument is redundant as it contains no additional information
 
 ```diff
 File: RuniverseLandMinter.sol
@@ -185,7 +183,9 @@ File: RuniverseLandMinter.sol
 - 191:         if (node != _leaf) return false;
 ```
 
-## 2.2. Non-traditional Use of ReentrancyGuard
+# 2. Non-Critical Issues
+
+## 2.1. Non-traditional Use of ReentrancyGuard
 
 The [NatSpec documentation on ReentrancyGuard.sol](https://github.com/compound-finance/compound-protocol/blob/f385d71983ae5c5799faae9b2dfea43e5cf75262/contracts/ReentrancyGuard.sol#L6-L7) states:
 
@@ -203,7 +203,7 @@ RuniverseLandMinter.sol:269:    ) public payable nonReentrant {
 
 As a reminder, I do suggest deleting `RuniverseLand.sol#mint()` in another submission, so `mintTokenId()` can also be declared as external just like it is in the interface `IRuniverseLand.sol`
 
-## 2.3. Duplicated code: Hardcoded strings having multiple occurrences should be declared as `constant`
+## 2.2. Duplicated code: Hardcoded strings having multiple occurrences should be declared as `constant`
 
 ```solidity
 RuniverseLandMinter.sol:229:        require(mintlistStarted(), "Mint not started");
@@ -247,7 +247,7 @@ RuniverseLandMinter.sol:539:        require(address(vault) != address(0), "no va
 RuniverseLandMinter.sol:547:        require(address(vault) != address(0), "no vault");
 ```
 
-## 2.4. Typos and syntax
+## 2.3. Typos and syntax
 
 - Grammar:
 
@@ -278,7 +278,7 @@ File: ERC721Vestable.sol
 106:     function _setVestingEnd(uint256 _newVestingEnd) internal virtual {
 ```
 
-## 2.5. Remove unused function
+## 2.4. Remove unused function
 
 The following is never used:
 
@@ -293,7 +293,7 @@ File: RuniverseLand.sol
 139:     }
 ```
 
-## 2.6. Upgrade to Solidity version `0.8.12`  and use `string.concat()` or `bytes.concat()`
+## 2.5. Upgrade to Solidity version `0.8.12`  and use `string.concat()` or `bytes.concat()`
 
 Solidity version 0.8.12 introduces `string.concat()` (vs `abi.encodePacked(<str>,<str>)`)
 
@@ -302,7 +302,7 @@ contracts/RuniverseLand.sol:
   121:         return string(abi.encodePacked(baseTokenURI, tokenId.toString()));
 ```
 
-## 2.7. Use named returns where relevant
+## 2.6. Use named returns where relevant
 
 - `File: RuniverseLandMinter.sol#getTotalMintedLands()`
 
@@ -336,7 +336,7 @@ contracts/RuniverseLand.sol:
 159:     }
 ```
 
-## 2.8. Magic numbers
+## 2.7. Magic numbers
 
 Replace magic numbers with constants:
 
@@ -346,7 +346,7 @@ File: RuniverseLandMinter.sol
 403:         require( uint256(plotSize) <= 255, "Plot index overflow" );
 ```
 
-## 2.9. Non-library/interface files should use fixed compiler versions, not floating ones
+## 2.8. Non-library/interface files should use fixed compiler versions, not floating ones
 
 ```solidity
 ERC721Vestable.sol:5:pragma solidity ^0.8.0;
