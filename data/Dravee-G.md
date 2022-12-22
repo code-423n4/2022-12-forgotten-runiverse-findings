@@ -270,8 +270,9 @@ SLOADs are expensive (100 gas after the 1st one) compared to MLOADs/MSTOREs (3 g
 
 There are some variables that are very unlikely to change
 
+- File: ERC721Vestable.sol
+
 ```solidity
-File: ERC721Vestable.sol
 16:     /// @notice the tokens from 0 to lastVestedTokenId will vest over time
 17:     uint256 public lastVestingGlobalId = 10924;
 18: 
@@ -280,6 +281,13 @@ File: ERC721Vestable.sol
 21: 
 22:     /// @notice the time the vesting ends
 23:     uint256 public vestingEnd = 1734998400; // Dec 24th, 2024
+```
+
+- File: RuniverseLandMinter.sol (`vault` is actually the multisig `owner`)
+
+```solidity
+19:     /// @notice Address to the vault where we can withdraw
+20:     address payable public vault; 
 ```
 
 Consider deleting their setters and marking them as immutable to save a massive amount of gas (**20 000 gas per constant**)
