@@ -90,7 +90,7 @@ contracts/RuniverseLandMinter.sol:
   310:             msg.value == plotPrices[uint256(plotSize)] * numPlots,  //@audit-issue Better just send back the excess tokens at the end
 ```
 
-There might even be issues with the front-end due to this Ether's 18 decimals & JavaScript.
+There might even be issues with the front-end due to Ether's 18 decimals & JavaScript's precision.
 I'd recommend authorizing an excess `msg.value` and returning the excess to `msg.sender` at the end of the call
 
 ## 1.5. Missing events on setters
