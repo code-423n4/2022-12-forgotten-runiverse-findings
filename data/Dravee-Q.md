@@ -293,7 +293,7 @@ File: RuniverseLand.sol
 139:     }
 ```
 
-## 2.5. Upgrade to Solidity version `0.8.12`  and use `string.concat()` or `bytes.concat()`
+## 2.5. Upgrade to Solidity version `0.8.12`  and use `string.concat()`
 
 Solidity version 0.8.12 introduces `string.concat()` (vs `abi.encodePacked(<str>,<str>)`)
 
@@ -350,7 +350,6 @@ File: RuniverseLandMinter.sol
 
 ```solidity
 ERC721Vestable.sol:5:pragma solidity ^0.8.0;
-IRuniverseLand.sol:2:pragma solidity ^0.8.0;
 RuniverseLand.sol:8:pragma solidity ^0.8.0;
 RuniverseLandMinter.sol:2:pragma solidity ^0.8.0;
 ```
