@@ -267,7 +267,7 @@ File: ERC721Vestable.sol
 + 54:      * @notice returns true if a tokenId has vesting property.
 ```
 
-- Sense
+- Wrong word:
 
 ```diff
 File: ERC721Vestable.sol
