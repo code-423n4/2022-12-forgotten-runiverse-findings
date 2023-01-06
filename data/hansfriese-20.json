@@ -1,7 +1,7 @@
 {
   "contest": 198,
   "handle": "hansfriese",
-  "risk": "",
+  "risk": "2",
   "title": "Vesting unlock is not accurate",
   "issueId": 20,
   "issueUrl": "https://github.com/code-423n4/2022-12-forgotten-runiverse-findings/issues/20"
