@@ -1,7 +1,7 @@
 {
   "contest": 198,
   "handle": "hansfriese",
-  "risk": "",
+  "risk": "2",
   "title": "`RuniverseLandMinter.claimlistMint()` shouldn't be a `payable` function",
   "issueId": 19,
   "issueUrl": "https://github.com/code-423n4/2022-12-forgotten-runiverse-findings/issues/19"
