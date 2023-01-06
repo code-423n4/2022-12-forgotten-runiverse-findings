@@ -1,7 +1,7 @@
 {
   "contest": 198,
   "handle": "cccz",
-  "risk": "",
+  "risk": "2",
   "title": "Use of .send() May Revert if The Recipient's Fallback Function Consumes More Than 2300 Gas",
   "issueId": 12,
   "issueUrl": "https://github.com/code-423n4/2022-12-forgotten-runiverse-findings/issues/12"
