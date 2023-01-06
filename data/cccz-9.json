@@ -1,7 +1,7 @@
 {
   "contest": 198,
   "handle": "cccz",
-  "risk": "",
+  "risk": "2",
   "title": "RuniverseLandMinter.mintlisted() may not work",
   "issueId": 9,
   "issueUrl": "https://github.com/code-423n4/2022-12-forgotten-runiverse-findings/issues/9"
