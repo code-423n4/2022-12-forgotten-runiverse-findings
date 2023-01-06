@@ -1,7 +1,7 @@
 {
   "contest": 198,
   "handle": "Lambda",
-  "risk": "",
+  "risk": "2",
   "title": "mintlistMint: Address that is in both merkle trees not correctly handled",
   "issueId": 5,
   "issueUrl": "https://github.com/code-423n4/2022-12-forgotten-runiverse-findings/issues/5"
