@@ -1,7 +1,7 @@
 {
   "contest": 198,
   "handle": "Dravee",
-  "risk": "",
+  "risk": "2",
   "title": "`RuniverseLand.sol#mint()` can be bricked",
   "issueId": 16,
   "issueUrl": "https://github.com/code-423n4/2022-12-forgotten-runiverse-findings/issues/16"
